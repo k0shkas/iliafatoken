@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE #1 ILIA FAN TOKEN | $ILIA COIN</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- Custom Styles -->
+    <style>
+        /* Apply the custom font and background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://i.postimg.cc/HkGTVMyS/Copilot-20250617-175856.jpg');
+            background-size: cover; /* Ensures the image fills the entire screen */
+            background-position: center center; /* Centers the image */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #000;
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
+        }
+
+        /* Radial gradient overlay for a more polished look */
+        .bg-overlay {
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
+        }
+
+        /* Define custom colors: Gold and White/Grey */
+        .spain-gold { color: #fabd00; }
+        .border-spain-gold { border-color: #fabd00; }
+        .bg-spain-gold { background-color: #fabd00; }
+
+        /* Glassmorphism effect for the main card with a golden glow */
+        .card-blur {
+            background: rgba(10, 10, 10, 0.65);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(250, 189, 0, 0.2);
+            box-shadow: 0 0 35px rgba(250, 189, 0, 0.15);
+        }
+
+        /* Interactive Coin Effect */
+        .interactive-coin-container {
+            perspective: 1000px;
+        }
+        .interactive-coin {
+            transition: transform 0.4s ease-out;
+            cursor: pointer;
+            animation: breathe 3.5s ease-in-out infinite;
+        }
+        .interactive-coin:hover {
+            animation-play-state: paused;
+            transform: translateY(-15px) rotateY(20deg) scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        /* 360 Spin Animation on Click */
+        .spin-360 {
+            animation: spin 0.6s ease-in-out, breathe-pause 0.6s forwards;
+        }
+
+        @keyframes spin {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        @keyframes breathe-pause {
+             from { animation-play-state: paused; }
+             to { animation-play-state: paused; }
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(250, 189, 0, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px 5px rgba(250, 189, 0, 0.7);
+            }
+        }
+
+        /* Animation for the content cards */
+        .fade-in-up { animation: fadeInUp 1s ease-out forwards; }
+        .fade-in-up-delay-1 { opacity: 0; animation: fadeInUp 1s ease-out 0.2s forwards; }
+        .fade-in-up-delay-2 { opacity: 0; animation: fadeInUp 1s ease-out 0.4s forwards; }
+        .fade-in-up-delay-3 { opacity: 0; animation: fadeInUp 1s ease-out 0.6s forwards; }
+
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Enhanced title shadow */
+        .title-shadow { text-shadow: 0px 2px 10px rgba(0,0,0,0.5); }
+
+        /* Countdown Timer Styles */
+        #countdown { display: flex; justify-content: center; gap: 1rem; }
+        .time-block { background: rgba(0,0,0,0.3); padding: 0.5rem 1rem; border-radius: 0.5rem; border: 1px solid rgba(250, 189, 0, 0.2); min-width: 80px; }
+        .time-block .number { font-size: 2rem; font-weight: 700; color: #fabd00; line-height: 1; text-shadow: 0 0 8px rgba(250, 189, 0, 0.5); }
+        .time-block .label { font-size: 0.75rem; text-transform: uppercase; color: #ccc; }
+
+        /* Podcast Player Styles */
+        .podcast-player {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 0.5rem;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            border: 1px solid rgba(250, 189, 0, 0.2);
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .podcast-player:hover {
+            transform: scale(1.03);
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.7);
+            pointer-events: none;
+            transition: color 0.3s;
+        }
+        .podcast-player:hover .play-button {
+            color: rgba(255, 255, 255, 1);
+        }
+
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Background Overlay with new gradient -->
+    <div class="absolute inset-0 bg-overlay z-0"></div>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 flex flex-col items-center justify-center min-h-screen p-4 py-12 gap-12">
+
+        <!-- Main Card -->
+        <div class="card-blur w-full max-w-2xl rounded-2xl shadow-2xl p-6 sm:p-10 text-center fade-in-up">
+            <div class="flex justify-center mb-6 interactive-coin-container">
+                <img id="coin-image" src="https://i.postimg.cc/K8z8MTcB/Chat-GPT-Image-Jun-17-2025-07-01-31-PM.png" alt="ILIA Coin" class="interactive-coin w-48 h-48 rounded-full object-cover border-4 border-spain-gold">
+            </div>
+            <h1 class="text-3xl md:text-4xl font-black uppercase tracking-wider title-shadow">
+                The #1 <span class="spain-gold">Ilia</span> Fan Token
+            </h1>
+            <p class="max-w-md mx-auto text-gray-300 mt-4 mb-8">
+                 Your central hub for the latest news, event countdowns, and community events celebrating the undisputed champion, Ilia Topuria.
+            </p>
+            <div class="bg-black/40 rounded-lg p-6 mb-8 max-w-lg mx-auto">
+                <div class="flex flex-col items-center justify-center gap-2">
+                    <span class="font-bold">TICKER:</span>
+                    <span class="font-black text-5xl spain-gold" style="text-shadow: 0 0 10px rgba(250, 189, 0, 0.5);">$ILIA</span>
+                </div>
+                 <div class="mt-6">
+                    <p class="font-bold mb-2">CONTRACT ADDRESS:</p>
+                    <div class="flex items-center justify-center bg-gray-900/50 rounded-lg p-2 gap-2">
+                        <code id="contractAddress" class="text-sm text-gray-300 break-all">9aB8iJkLdeYcQh9yv4zW3fG6H7jK8LmnP9oQrStUvWxY</code>
+                        <button id="copyButton" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded-md text-sm transition-colors duration-300">Copy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full max-w-lg mx-auto">
+                 <a href="#" target="_blank" class="block w-full bg-spain-gold text-black font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wide transform hover:scale-105 transition-transform duration-300 shadow-lg mb-6">BUY HERE</a>
+
+                <!-- Social Links Container -->
+                <div class="flex flex-col gap-6">
+                    <!-- Crypto Community -->
+                    <div>
+                         <h4 class="text-md font-bold uppercase tracking-wider mb-3 text-gray-300">Crypto Community 🚀💎</h4>
+                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <a href="https://x.com/iliatopuriasol" target="_blank" class="flex items-center justify-center gap-3 bg-white/10 p-3 rounded-lg hover:bg-white/20 transition-colors duration-300">
+                                <i class="fa-brands fa-x-twitter text-xl"></i>
+                                <span class="font-semibold">Twitter</span>
+                            </a>
+                            <a href="https://t.me/+pi9RfZ3X20xiYjli" target="_blank" class="flex items-center justify-center gap-3 bg-white/10 p-3 rounded-lg hover:bg-white/20 transition-colors duration-300">
+                                <i class="fa-brands fa-telegram text-xl"></i>
+                                <span class="font-semibold">Telegram</span>
+                            </a>
+                             <div class="flex items-center justify-center gap-3 bg-white/10 p-3 rounded-lg opacity-50 cursor-not-allowed">
+                                <i class="fa-brands fa-discord text-xl"></i>
+                                <span class="font-semibold">Coming soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-[11px] text-gray-500 mt-10">This token is a memecoin created for entertainment purposes and is not affiliated with Ilia Topuria. It has no intrinsic value and is not intended as a financial investment.</p>
+        </div>
+
+        <!-- Event Card -->
+        <div class="card-blur w-full max-w-2xl rounded-2xl shadow-2xl p-6 sm:p-10 text-center fade-in-up-delay-1">
+            <h3 class="text-lg font-bold uppercase tracking-wider mb-3 text-gray-300">Next Event</h3>
+            <div id="countdown" class="mb-4">
+                <div class="time-block"><span id="days" class="number">00</span><span class="label">Days</span></div>
+                <div class="time-block"><span id="hours" class="number">00</span><span class="label">Hours</span></div>
+                <div class="time-block"><span id="minutes" class="number">00</span><span class="label">Minutes</span></div>
+                <div class="time-block"><span id="seconds" class="number">00</span><span class="label">Seconds</span></div>
+            </div>
+             <h2 class="text-xl md:text-2xl font-semibold mt-4 spain-gold">ILIA TOPURIA vs CHARLES OLIVEIRA</h2>
+        </div>
+
+        <!-- Featured Podcast Card -->
+        <div class="card-blur w-full max-w-2xl rounded-2xl p-6 sm:p-10 text-center fade-in-up-delay-2">
+            <h3 class="text-3xl font-bold uppercase tracking-wider mb-4 title-shadow"><span class="spain-gold">Featured</span> Podcast</h3>
+            <h4 class="text-xl font-bold mb-4">Ilia Topuria on <span class="spain-gold">The PBD Podcast</span></h4>
+            <a href="https://www.youtube.com/watch?v=w4EgWXNWB2w" target="_blank" rel="noopener noreferrer" class="w-full max-w-sm mx-auto block bg-white/10 text-white font-bold py-3 px-8 rounded-lg text-lg uppercase tracking-wide hover:bg-white/20 transition-colors duration-300 shadow-lg">
+                <i class="fa-brands fa-youtube mr-2"></i> Watch on YouTube
+            </a>
+        </div>
+
+        <!-- About Us Card -->
+        <div class="card-blur w-full max-w-2xl rounded-2xl p-6 sm:p-10 text-center fade-in-up-delay-3">
+            <h3 class="text-3xl font-bold uppercase tracking-wider mb-4 title-shadow"><span class="spain-gold">About</span> Us</h3>
+            <div class="text-gray-300 text-center">
+                <p>This project is fan-made and not affiliated with Ilia Topuria.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // --- Countdown Timer ---
+        const eventCountdownDate = new Date("Jun 28, 2025 22:00:00").getTime();
+        const eventCountdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventCountdownDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const format = (num) => (num < 10 ? "0" + num : num);
+            if (document.getElementById("days")) {
+                document.getElementById("days").innerText = format(days);
+                document.getElementById("hours").innerText = format(hours);
+                document.getElementById("minutes").innerText = format(minutes);
+                document.getElementById("seconds").innerText = format(seconds);
+            }
+            if (distance < 0) {
+                clearInterval(eventCountdownFunction);
+                document.getElementById("countdown").innerHTML = "<div class='text-2xl font-bold spain-gold'>THE EVENT IS LIVE!</div>";
+            }
+        }, 1000);
+
+        // --- Copy to Clipboard ---
+        const copyButton = document.getElementById('copyButton');
+        if(copyButton) {
+            const contractAddress = document.getElementById('contractAddress').innerText;
+            copyButton.addEventListener('click', () => {
+                const textArea = document.createElement('textarea');
+                textArea.value = contractAddress;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    copyButton.innerText = 'Copied!';
+                    copyButton.classList.add('bg-green-600');
+                    setTimeout(() => { copyButton.innerText = 'Copy'; copyButton.classList.remove('bg-green-600'); }, 2000);
+                } catch (err) { console.error('Failed to copy text: ', err); }
+                document.body.removeChild(textArea);
+            });
+        }
+
+        // --- All DOM Content Loaded ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Coin Spin on Click ---
+            const coinImage = document.getElementById('coin-image');
+            coinImage.addEventListener('click', () => { if (!coinImage.classList.contains('spin-360')) { coinImage.classList.add('spin-360'); } });
+            coinImage.addEventListener('animationend', (e) => { if (e.animationName === 'spin') { coinImage.classList.remove('spin-360'); } });
+        });
+    </script>
+
+</body>
+</html>
